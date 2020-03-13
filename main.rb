@@ -41,6 +41,11 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
                 chat_id: message.chat.id,
                 text: 'Привет, ' + message.from.first_name
             )
+        when '/stop'
+            bot.api.send_message(
+                chat_id: message.chat.id,
+                text: 'Пока, ' + message.from.first_name + '...Заходи еще...'
+            )
         else
             bot.api.send_message(
                 chat_id: message.chat.id,
