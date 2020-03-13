@@ -39,7 +39,7 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
         when '/start', '/start start'
             bot.api.send_message(
                 chat_id: message.chat.id,
-                text: `Привет, #{message.from.first_name}.`
+                text: 'Привет, ' + message.from.first_name
             )
         else
             bot.api.send_message(
